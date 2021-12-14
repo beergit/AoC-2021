@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 require_relative 'advent2'
 require 'test/unit'
-class TestAdvent1 < Test::Unit::TestCase
+class TestAdvent2 < Test::Unit::TestCase
  
 TestData = <<EOF
 forward 5

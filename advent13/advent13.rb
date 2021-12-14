@@ -16,9 +16,7 @@ class Advent13
 
   def part2
     @folds.each{|f| fold!(f)}
-    puts
-    puts to_s
-    true
+    to_s
   end
 
   private
@@ -33,6 +31,6 @@ class Advent13
       str[d[1]] ||= []
       str[d[1]][d[0]] = '#'
     end
-    str.map{|y| y.map{|x| x ? '#' : ' '}.join}.join("\n")
+    str.map{|y| y.map{|x| x ? '#' : ' '}.join}.join("\n") + "\n"
   end
 end

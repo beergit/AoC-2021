@@ -26,15 +26,23 @@ TestData = <<EOF
 fold along y=7
 fold along x=5
 EOF
+TestData2 = <<EOF
+#####
+#   #
+#   #
+#   #
+#####
+EOF
 
   def setup
     @test1_1  = [TestData, 17]
+    @test2_1  = [TestData, TestData2]
   end  
 
   def test_part1
     assert_equal(@test1_1[1], Advent13.new(@test1_1[0]).part1)
   end
   def test_part2
-    assert_true(Advent13.new(@test1_1[0]).part2)
+    assert_equal(@test2_1[1], Advent13.new(@test1_1[0]).part2)
   end
 end
