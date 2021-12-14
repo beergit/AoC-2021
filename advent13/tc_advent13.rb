@@ -27,6 +27,7 @@ fold along y=7
 fold along x=5
 EOF
 TestData2 = <<EOF
+
 #####
 #   #
 #   #

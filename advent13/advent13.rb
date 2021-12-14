@@ -31,6 +31,6 @@ class Advent13
       str[d[1]] ||= []
       str[d[1]][d[0]] = '#'
     end
-    str.map{|y| y.map{|x| x ? '#' : ' '}.join}.join("\n") + "\n"
+    "\n" + str.map{|y| y.map{|x| x ? '#' : ' '}.join}.join("\n") + "\n"
   end
 end
