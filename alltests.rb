@@ -19,6 +19,8 @@ require_relative './advent11/tc_advent11'
 require_relative './advent12/tc_advent12'
 require_relative './advent13/tc_advent13'
 require_relative './advent14/tc_advent14'
+require_relative './advent15/tc_advent15'
+require_relative './advent16/tc_advent16'
 
 class TS_Advent_2021
   def self.suite()
@@ -37,6 +39,8 @@ class TS_Advent_2021
     suite << TestAdvent12.suite
     suite << TestAdvent13.suite
     suite << TestAdvent14.suite
+    suite << TestAdvent15.suite
+    suite << TestAdvent16.suite
     return suite
   end
 end
