@@ -19,7 +19,7 @@ class Advent18
 
 private
   class Snailfish
-    attr_accessor :number
+    attr_reader :number
 
     def initialize(n = nil)
       @number = n
@@ -40,7 +40,7 @@ private
 
     def explode!
       cnt = 0
-      @number.size.times do |idx|
+      number.size.times do |idx|
         cnt += 1 if number[idx] == '['
         cnt -= 1 if number[idx] == ']'
         if(cnt == 5)
@@ -51,7 +51,7 @@ private
             l_num = $1.to_i + pm[1].to_i
             left_str = left_str[..left_pos] + l_num.to_s + left_str[(left_pos + $1.size + 1)..] 
           end  
-          right_str = @number[(idx + pm[0].size)..]
+          right_str = number[(idx + pm[0].size)..]
           right_pos = right_str.index /(\d+)/
           if(right_pos)
             r_num = $1.to_i + pm[2].to_i
@@ -66,16 +66,16 @@ private
 
     def split!
       cnt = 0
-      split_pos = @number.index /(\d{2,})/
+      split_pos = number.index /(\d{2,})/
       if(split_pos)
         num = $1.to_i
-        @number = @number[..(split_pos - 1)] + "[#{num/2},#{num/2 + num%2}]" + @number[(split_pos + $1.size)..]
+        @number = number[..(split_pos - 1)] + "[#{num/2},#{num/2 + num%2}]" + number[(split_pos + $1.size)..]
       end
       split_pos != nil
     end
 
    def magnitude(str = nil)
-      str = @number.chars unless str 
+      str = number.chars unless str 
       idx = 0
       pair = []
       until str.empty?
